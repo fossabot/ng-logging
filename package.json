@@ -8,7 +8,7 @@
   "homepage": "https://github.com/bizappframework/ng-logging",
   "scripts": {
     "lint": "tslint -p tsconfig.json -c tslint.json  -t verbose",
-    "build:generate": "ngb build --disable-telemetry --filter=generate --env.generate --env.prod",
+    "build:generate": "node_modules/.bin/ngb build --disable-telemetry --filter=generate --env.generate --env.prod",
     "build": "node_modules/.bin/ngb build --disable-telemetry --env.prod --env.aot --env.generate"
   },
   "dependencies": {
