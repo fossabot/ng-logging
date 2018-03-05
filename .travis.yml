@@ -21,8 +21,8 @@ branches:
   only:
     - master
 install:
-  - npm install -g @bizappframework/angular-build
   - npm install
+  - npm install -D @bizappframework/angular-build
 script:
   - npm run build
 cache:
