@@ -18,7 +18,7 @@ branches:
   only:
     - master
 install:
-  - npm install --global @bizappframework/angular-build
+  - npm install --no-save @bizappframework/angular-build
   - npm install
 script:
   - npm run build

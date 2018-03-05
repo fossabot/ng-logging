@@ -9,7 +9,7 @@
   "scripts": {
     "lint": "tslint -p tsconfig.json -c tslint.json  -t verbose",
     "build:generate": "ngb build --disable-telemetry --filter=generate --env.generate --env.prod",
-    "build": "ngb build --disable-telemetry --env.prod --env.aot --env.generate"
+    "build": "node_modules/.bin/ngb build --disable-telemetry --env.prod --env.aot --env.generate"
   },
   "dependencies": {
     "@angular/common": "^5.2.7",
