@@ -1,0 +1,27 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "es2015",
+    "importHelpers": true,
+    "baseUrl": ".",
+    "rootDir": ".",
+    "outDir": "../../dist/packages/ng-logging-application-insights",
+    // don't auto-discover @types/node, it results in a ///<reference in the .d.ts output
+    "types": [],
+    "paths": {
+      "@bizappframework/ng-logging": [ "../../dist/packages/ng-logging" ]
+    }
+  },
+  "files": [
+    "public_api.ts"
+  ],
+  "angularCompilerOptions": {
+    "annotateForClosureCompiler": true,
+    "strictMetadataEmit": true,
+    "skipTemplateCodegen": true,
+    "fullTemplateTypeCheck": true,
+    "flatModuleOutFile": "index.js",
+    "flatModuleId": "@bizappframework/ng-logging-application-insights"
+  }
+}

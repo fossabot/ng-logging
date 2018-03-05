@@ -1,0 +1,29 @@
+{
+  "name": "@bizappframework/ng-logging-application-insights",
+  "version": "0.0.0",
+  "description": "Contains Microsoft Azure Application Insights module and logging target for Angular projects.",
+  "author": "",
+  "license": "",
+  "repository": "",
+  "homepage": "",
+  "keywords": [
+    "angular",
+    "angular5",
+    "logging",
+    "ms application insights",
+    "application insights",
+    "angular application insights",
+    "microsoft application insights",
+    "ms app insights",
+    "aspnet core app insights",
+    "angular application insights logging"
+  ],
+  "dependencies": {
+    "tslib": "^1.9.0"
+  },
+  "peerDependencies": {
+    "@angular/core": ">=5.0.0",
+    "@bizappframework/ng-logging": ">=5.0.0-beta.0",
+    "applicationinsights-js": ">=1.0.15"
+  }
+}

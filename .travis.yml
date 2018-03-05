@@ -1,0 +1,30 @@
+sudo: false
+dist: trusty
+language: node_js
+node_js:
+  - "lts/*"
+  - "node"
+env:
+  global:
+    - DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+    - DOTNET_CLI_TELEMETRY_OPTOUT: 1
+    - ANGULAR_BUILD_TELEMETRY_OPTOUT: 1
+os:
+  - linux
+  - osx
+osx_image: xcode8.2
+addons:
+  apt:
+    packages:
+      - libunwind8
+branches:
+  only:
+    - master
+install:
+  - npm install -g @bizappframework/angular-build
+  - npm install
+script:
+  - npm run build
+cache:
+  directories:
+    - ./node_modules

@@ -1,0 +1,26 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "declaration": false,
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noEmitOnError": true,
+    "types": [],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+
+    "outDir": "./dist/out-tsc",
+    "baseUrl": ".",
+    // "rootDir": ".",
+
+    "paths": {
+      "@bizappframework/ng-logging": [ "../../../modules/ng-logging" ],
+      "@bizappframework/ng-logging-application-insights": [ "../../../modules/ng-logging-application-insights" ],
+      "app/*": [ "./app/*" ],
+      "environments/*": [ "./environments/*" ]
+    }
+  }
+}

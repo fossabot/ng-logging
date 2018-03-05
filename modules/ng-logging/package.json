@@ -1,0 +1,22 @@
+{
+  "name": "@bizappframework/ng-logging",
+  "version": "0.0.0",
+  "description": "Contains logging abstractions and a few implementations based on [Microsoft ASP.Net Logging](https://github.com/aspnet/Logging) for Angular projects.",
+  "author": "",
+  "license": "",
+  "repository": "",
+  "homepage": "",
+  "keywords": [
+    "angular",
+    "angular5",
+    "logging",
+    "angular logging",
+    "aspnet core angular logging"
+  ],
+  "dependencies": {
+    "tslib": "^1.9.0"
+  },
+  "peerDependencies": {
+    "@angular/core": ">=5.0.0"
+  }
+}
