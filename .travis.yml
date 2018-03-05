@@ -12,12 +12,12 @@ branches:
   only:
     - master
 before_install:
-  - ln -s /usr/bin/nodejs /usr/bin/node
   - npm install -g @bizappframework/angular-build
 install:
   - npm install
   - npm link @bizappframework/angular-build
 script:
+  - npm run lint
   - npm run build
 cache:
   directories:
