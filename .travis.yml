@@ -23,7 +23,6 @@ branches:
 install:
   - npm install
 script:
-  - npm install -g @bizappframework/angular-build
   - npm run build
 cache:
   directories:
