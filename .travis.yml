@@ -1,9 +1,8 @@
+dist: trusty
 sudo: false
 language: node_js
 node_js:
-  - "lts/*"
-matrix:
-  fast_finish: true
+  - "8"
 env:
   global:
     - DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
@@ -12,18 +11,14 @@ env:
 os:
   - linux
   - osx
-osx_image: xcode9.2
 branches:
   only:
     - master
 before_install:
-  - npm install -g npm@latest
   - npm install -g @bizappframework/angular-build
   - ngb --version
 install:
   - npm install
-  - npm link @bizappframework/angular-build
-  - ngb --version
 script:
   - npm run build
 cache:
