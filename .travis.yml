@@ -16,8 +16,14 @@ osx_image: xcode9.2
 branches:
   only:
     - master
+before_install:
+  - npm install -g npm@latest
+  - npm install -g @bizappframework/angular-build
+  - ngb --version
 install:
   - npm install
+  - npm link @bizappframework/angular-build
+  - ngb --version
 script:
   - npm run build
 cache:
