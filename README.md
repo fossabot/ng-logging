@@ -6,7 +6,7 @@ Contains logging modules for Angular app.
 Packages
 ---------------
 
-[@bizappframework/ng-logging](https://www.npmjs.com/package/@bizappframework/ng-logging)  
+[@bizappframework/ng-logging](https://www.npmjs.com/package/@bizappframework/ng-logging)
 [@bizappframework/ng-logging-application-insights](https://www.npmjs.com/package/@bizappframework/ng-logging-application-insights)
 
 Example
