@@ -11,13 +11,9 @@ env:
 branches:
   only:
     - master
-before_install:
-  - npm install -g @bizappframework/angular-build
 install:
   - npm install
-  - npm link @bizappframework/angular-build
 script:
-  - npm run lint
   - npm run build
 cache:
   directories:
