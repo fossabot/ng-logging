@@ -16,7 +16,6 @@ install:
   - ps: Install-Product node $env:nodejs_version
   - set CI=true
   - set PATH=%APPDATA%\npm;%PATH%
-  - npm install --no-save @bizappframework/angular-build
   - npm install
   - ps: '"//registry.npmjs.org/:_authToken=$env:npm_auth_token`n" | out-file "$env:userprofile\.npmrc" -Encoding ASCII'
   - npm whoami
