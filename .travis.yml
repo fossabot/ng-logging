@@ -16,7 +16,7 @@ install:
   - npm install
   - npm link @bizappframework/angular-build
 script:
-  - npm run build
+  - node ./node_modules/@bizappframework/angular-build/bin/ngb build --disable-telemetry --env.prod --env.aot --env.generate
 cache:
   directories:
     - ./node_modules
