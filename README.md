@@ -10,8 +10,17 @@ Contains logging modules for Angular app.
 Packages
 ---------------
 
-[@bizappframework/ng-logging](https://www.npmjs.com/package/@bizappframework/ng-logging)  
-[@bizappframework/ng-logging-application-insights](https://www.npmjs.com/package/@bizappframework/ng-logging-application-insights)
+[@bizappframework/ng-logging](https://www.npmjs.com/package/@bizappframework/ng-logging) 
+[![npm version](https://badge.fury.io/js/%40bizappframework%2Fng-logging.svg)](https://badge.fury.io/js/%40bizappframework%2Fng-logging)  
+Contains logging abstractions and a few implementations for Angular projects based on [Microsoft ASP.Net Logging](https://github.com/aspnet/Logging).
+
+[@bizappframework/ng-logging-application-insights](https://www.npmjs.com/package/@bizappframework/ng-logging-application-insights) 
+[![npm version](https://badge.fury.io/js/%40bizappframework%2Fng-logging-application-insights.svg)](https://badge.fury.io/js/%40bizappframework%2Fng-logging-application-insights)  
+Contains Microsoft Azure Application Insights module and logging target for Angular projects.
+
+[@bizappframework/ngrx-store-logger](https://www.npmjs.com/package/@bizappframework/ngrx-store-logger) 
+[![npm version](https://badge.fury.io/js/%40bizappframework%2Fngrx-store-logger.svg)](https://badge.fury.io/js/%40bizappframework%2Fngrx-store-logger)  
+Contains logging middleware for @ngrx/store applications.
 
 Example
 ---------------

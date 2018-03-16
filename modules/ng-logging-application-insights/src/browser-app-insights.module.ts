@@ -6,6 +6,20 @@ import { BrowserAppInsightsService } from './browser-app-insights.service';
 
 @NgModule()
 export class BrowserAppInsightsModule {
+    constructor(
+        @Optional() @SkipSelf() parentModule: BrowserAppInsightsModule,
+        appInsightsService: AppInsightsService
+    ) {
+        if (parentModule) {
+            throw new Error(
+                'BrowserAppInsightsModule is already loaded. Import it in the AppModule only');
+        }
+
+        if (appInsightsService.config && appInsightsService.config.instrumentationKey) {
+            appInsightsService.init();
+        }
+    }
+
     static forRoot(config: AppInsightsConfig | null = null): ModuleWithProviders {
         return {
             ngModule: BrowserAppInsightsModule,
@@ -20,19 +34,5 @@ export class BrowserAppInsightsModule {
                 }
             ]
         };
-    }
-
-    constructor(
-        @Optional() @SkipSelf() parentModule: BrowserAppInsightsModule,
-        appInsightsService: AppInsightsService
-    ) {
-        if (parentModule) {
-            throw new Error(
-                'BrowserAppInsightsModule is already loaded. Import it in the AppModule only');
-        }
-
-        if (appInsightsService.config && appInsightsService.config.instrumentationKey) {
-            appInsightsService.init();
-        }
     }
 }

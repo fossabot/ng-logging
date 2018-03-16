@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Optional, SkipSelf } from '@angular/core';
 
 import { LOGGER_PROVIDER } from '@bizappframework/ng-logging';
 
@@ -16,4 +16,10 @@ import { AppInsightsLoggerProvider } from './app-insights-logger-provider';
         }
     ]
 })
-export class AppInsightsLoggerModule { }
+export class AppInsightsLoggerModule {
+    constructor(@Optional() @SkipSelf() parentModule: AppInsightsLoggerModule) {
+        if (parentModule) {
+            throw new Error('AppInsightsLoggerModule has already been loaded, import in root module only.');
+        }
+    }
+}

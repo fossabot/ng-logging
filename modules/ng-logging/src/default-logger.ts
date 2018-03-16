@@ -15,7 +15,6 @@ export class DefaultLogger implements Logger {
         this._loggers = value;
     }
 
-    // tslint:disable-next-line:no-any
     trace(message?: string, ...optionalParams: any[]): void {
         if (!this.loggers) {
             return;
@@ -28,7 +27,6 @@ export class DefaultLogger implements Logger {
             });
     }
 
-    // tslint:disable-next-line:no-any
     debug(message: string, ...optionalParams: any[]): void {
         if (!this.loggers) {
             return;
@@ -41,7 +39,6 @@ export class DefaultLogger implements Logger {
             });
     }
 
-    // tslint:disable-next-line:no-any
     info(message: string, ...optionalParams: any[]): void {
         if (!this.loggers) {
             return;
@@ -54,7 +51,6 @@ export class DefaultLogger implements Logger {
             });
     }
 
-    // tslint:disable-next-line:no-any
     warn(message: string, ...optionalParams: any[]): void {
         if (!this.loggers) {
             return;
@@ -67,7 +63,6 @@ export class DefaultLogger implements Logger {
             });
     }
 
-    // tslint:disable-next-line:no-any
     error(message: string | Error, ...optionalParams: any[]): void {
         if (!this.loggers) {
             return;

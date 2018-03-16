@@ -1,13 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { ConsoleLoggerModule, LoggerModule } from '@bizappframework/ng-logging';
-import { AppInsightsLoggerModule } from '@bizappframework/ng-logging-application-insights';
+import { AppInsightsLoggerModule, BrowserAppInsightsModule } from '@bizappframework/ng-logging-application-insights';
 
-import { AppComponent } from 'app/app.component';
+import { environment } from 'environments/environment';
 
-export const appId = 'ng-logging-app';
+import { AppComponent } from './app.component';
+import { metaReducers, reducers } from './reducers';
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -16,16 +20,24 @@ export const appId = 'ng-logging-app';
     ],
     imports: [
         CommonModule,
-        BrowserModule.withServerTransition({
-            appId: appId
+        BrowserModule,
+
+        // ngrx
+        StoreModule.forRoot(reducers, { metaReducers }),
+        // Instrumentation must be imported after importing StoreModule (config is optional)
+        StoreDevtoolsModule.instrument({
+            logOnly: environment.production // Restrict extension to log-only mode
         }),
-        BrowserTransferStateModule,
 
         // logging
         LoggerModule.forRoot({ minLevel: 'trace' }),
         ConsoleLoggerModule,
-        AppInsightsLoggerModule
-    ],
-    providers: []
+        AppInsightsLoggerModule,
+        BrowserAppInsightsModule.forRoot({
+            // instrumentationKey: environment.aiInstrumentationKey,
+            verboseLogging: true,
+            enableDebug: true
+        })
+    ]
 })
-export class AppSharedModule { }
+export class AppModule { }

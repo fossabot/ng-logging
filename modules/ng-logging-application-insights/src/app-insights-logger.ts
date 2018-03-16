@@ -18,7 +18,6 @@ export class AppInsightsLogger implements Logger {
         }
     }
 
-    // tslint:disable-next-line:no-any
     trace(message?: string, ...optionalParams: any[]): void {
         if (!this.isEnabled(LogLevel.Trace)) {
             return;
@@ -29,7 +28,6 @@ export class AppInsightsLogger implements Logger {
             SeverityLevel.Verbose);
     }
 
-    // tslint:disable-next-line:no-any
     debug(message: string, ...optionalParams: any[]): void {
         if (!this.isEnabled(LogLevel.Debug)) {
             return;
@@ -40,7 +38,6 @@ export class AppInsightsLogger implements Logger {
             SeverityLevel.Verbose);
     }
 
-    // tslint:disable-next-line:no-any
     info(message: string, ...optionalParams: any[]): void {
         if (!this.isEnabled(LogLevel.Info)) {
             return;
@@ -51,7 +48,6 @@ export class AppInsightsLogger implements Logger {
             SeverityLevel.Information);
     }
 
-    // tslint:disable-next-line:no-any
     warn(message: string, ...optionalParams: any[]): void {
         if (!this.isEnabled(LogLevel.Warn)) {
             return;
@@ -62,7 +58,6 @@ export class AppInsightsLogger implements Logger {
             SeverityLevel.Warning);
     }
 
-    // tslint:disable-next-line:no-any
     error(message: string | Error, ...optionalParams: any[]): void {
         if (!this.isEnabled(LogLevel.Error)) {
             return;
@@ -89,7 +84,6 @@ export class AppInsightsLogger implements Logger {
         return this._filter(this.name, logLevel);
     }
 
-    // tslint:disable-next-line:no-any
     private mapToProperties(...optionalParams: any[]): { [name: string]: string } | undefined {
         let properties: { [name: string]: string } | undefined;
         if (optionalParams && optionalParams.length && typeof optionalParams[0] === 'object') {

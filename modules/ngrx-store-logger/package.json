@@ -1,0 +1,21 @@
+{
+  "name": "@bizappframework/ngrx-store-logger",
+  "version": "0.0.0",
+  "description": "Contains logging middleware for @ngrx/store applications.",
+  "author": "",
+  "license": "",
+  "repository": "",
+  "homepage": "",
+  "keywords": [
+    "angular",
+    "logging",
+    "ngrx-store",
+    "ngrx-store-logging"
+  ],
+  "dependencies": {
+    "tslib": "^1.9.0"
+  },
+  "peerDependencies": {
+    "@angular/core": ">=5.0.0"
+  }
+}

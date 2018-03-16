@@ -8,22 +8,20 @@
   "homepage": "",
   "keywords": [
     "angular",
-    "angular5",
     "logging",
-    "ms application insights",
-    "application insights",
-    "angular application insights",
-    "microsoft application insights",
-    "ms app insights",
-    "aspnet core app insights",
-    "angular application insights logging"
+    "application-insights",
+    "angular-application-insights",
+    "microsoft-application-insights",
+    "ms-app-insights",
+    "aspnet-core-angular-app-insights",
+    "angular-application-insights-logging"
   ],
   "dependencies": {
     "tslib": "^1.9.0"
   },
   "peerDependencies": {
     "@angular/core": ">=5.0.0",
-    "@bizappframework/ng-logging": ">=5.0.0-beta.0",
+    "@bizappframework/ng-logging": ">=5.0.0-beta.2",
     "applicationinsights-js": ">=1.0.15"
   }
 }

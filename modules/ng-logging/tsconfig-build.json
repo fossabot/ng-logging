@@ -1,12 +1,10 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "target": "es2015",
-    "module": "es2015",
-    "importHelpers": true,
     "baseUrl": ".",
     "rootDir": ".",
     "outDir": "../../dist/packages/ng-logging",
+
     // don't auto-discover @types/node, it results in a ///<reference in the .d.ts output
     "types": []
   },

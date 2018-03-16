@@ -6,14 +6,17 @@
       "srcDir": "modules/ng-logging",
       "outDir": "dist/packages/ng-logging",
       "libraryName": "baf.ngLogging",
+
       "tsTranspilation": {
         "tsconfig": "tsconfig-build.json",
         "copyTemplateAndStyleUrls": false,
         "inlineMetaDataResources": false
       },
+
       "packageOptions": {
         "packageJsonFile": "package.json"
       },
+
       "envOverrides": {
         "prod": {
           "clean": {
@@ -59,10 +62,25 @@
       "name": "ng-logging-application-insights",
       "srcDir": "modules/ng-logging-application-insights",
       "outDir": "dist/packages/ng-logging-application-insights",
+
       "libraryName": "baf.ngLoggingAi",
+
       "externals": {
         "@bizappframework/ng-logging": "baf.ngLogging",
         "applicationinsights-js": "AppInsights"
+      }
+    },
+    {
+      "extends": "ng-logging",
+      "name": "ngrx-store-logger",
+      "srcDir": "modules/ngrx-store-logger",
+      "outDir": "dist/packages/ngrx-store-logger",
+
+      "libraryName": "baf.ngrxStoreLogger",
+
+      "externals": {
+        "@bizappframework/ng-logging": "baf.ngLogging",
+        "@ngrx/store": "ngrx.store"
       }
     }
   ],
@@ -72,15 +90,18 @@
       "platformTarget": "web",
       "srcDir": "samples/ng-logging-aspnetcore-sample/ClientApp",
       "outDir": "samples/ng-logging-aspnetcore-sample/ClientApp/generated",
+
       "clean": {
         "beforeRun": {
           "cleanOutDir": true
         }
       },
+
       "polyfills": [
         "ie-polyfills.ts"
       ],
       "polyfillsChunkName": "ie-polyfills.min",
+
       "bundlesHash": false,
       "publicPath": "/",
       "skip": true,
@@ -96,16 +117,19 @@
       "srcDir": "samples/ng-logging-aspnetcore-sample/ClientApp",
       "outDir": "samples/ng-logging-aspnetcore-sample/wwwroot",
       "entry": "main.browser.ts",
-      "tsconfig": "tsconfig.browser.json",
+      "tsconfig": "tsconfig.json",
+
       "copy": [
         "favicon.ico",
         "generated/ie-polyfills.min.js"
       ],
+
       "polyfills": [
         "core-js/es6/reflect",
         "core-js/es7/reflect",
         "polyfills.ts"
       ],
+
       "publicPath": "/",
       "baseHref": "~/",
       "htmlInject": {
@@ -120,10 +144,12 @@
           "asp-append-version": "true"
         }
       },
+
       //"vendorChunk": true,
       "environmentVariables": {
         "aiInstrumentationKey": "process.env.NG_LOGGING_DEMO_APP_INSIGHTS_KEY"
       },
+
       "envOverrides": {
         "analyze": {
           "bundleAnalyzer": {
@@ -150,9 +176,6 @@
           },
           "bundlesHash": false,
           "chunksHash": false,
-          "moduleRoots": [
-            "dist/packages"
-          ],
           "moduleReplacements": [
             {
               "resourcePath": "./environments/environment.ts",
@@ -161,6 +184,8 @@
           ]
         },
         "aot": {
+          "tsconfig": "tsconfig.aot.json",
+
           "polyfills": [
             "polyfills.ts"
           ]

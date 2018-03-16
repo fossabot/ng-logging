@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": ".",
+
+    "paths": {
+      "@bizappframework/ng-logging": [ "../../../dist/packages/ng-logging" ],
+      "@bizappframework/ng-logging-application-insights": [ "../../../dist/packages/ng-logging-application-insights" ],
+      "@bizappframework/ngrx-store-logger": [ "../../../dist/packages/ngrx-store-logger" ],
+
+      "app/*": [ "./app/*" ],
+      "environments/*": [ "./environments/*" ]
+    }
+  }
+}

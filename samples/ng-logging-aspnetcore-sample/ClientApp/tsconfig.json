@@ -3,22 +3,24 @@
   "compilerOptions": {
     "declaration": false,
     "sourceMap": true,
+
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "noEmitOnError": true,
-    "types": [],
-    "lib": [
-      "es2017",
-      "dom"
-    ],
 
-    "outDir": "./dist/out-tsc",
+    "noEmitOnError": true,
+
+    "types": [],
+
+    "lib": [ "es2017", "dom" ],
+
     "baseUrl": ".",
-    // "rootDir": ".",
+    "outDir": "../../../out-tsc",
 
     "paths": {
       "@bizappframework/ng-logging": [ "../../../modules/ng-logging" ],
       "@bizappframework/ng-logging-application-insights": [ "../../../modules/ng-logging-application-insights" ],
+      "@bizappframework/ngrx-store-logger": [ "../../../modules/ngrx-store-logger" ],
+
       "app/*": [ "./app/*" ],
       "environments/*": [ "./environments/*" ]
     }

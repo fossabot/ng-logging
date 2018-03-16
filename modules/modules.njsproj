@@ -16,6 +16,7 @@
     <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <LastActiveSolutionConfig>Debug|Any CPU</LastActiveSolutionConfig>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
@@ -24,6 +25,9 @@
     <Content Include="ng-logging-application-insights\package.json" />
     <Content Include="ng-logging-application-insights\README.md" />
     <Content Include="ng-logging-application-insights\tsconfig-build.json" />
+    <Content Include="ngrx-store-logger\package.json" />
+    <Content Include="ngrx-store-logger\README.md" />
+    <Content Include="ngrx-store-logger\tsconfig-build.json" />
     <Content Include="tsconfig.json" />
     <Content Include="ng-logging\package.json" />
     <Content Include="ng-logging\tsconfig-build.json" />
@@ -57,12 +61,17 @@
     <TypeScriptCompile Include="ng-logging\src\logger.ts" />
     <TypeScriptCompile Include="ng-logging\src\null-logger.ts" />
     <TypeScriptCompile Include="ng-logging\src\parse-config.ts" />
+    <TypeScriptCompile Include="ngrx-store-logger\index.ts" />
+    <TypeScriptCompile Include="ngrx-store-logger\public_api.ts" />
+    <TypeScriptCompile Include="ngrx-store-logger\src\index.ts" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="ngrx-store-logger\" />
     <Folder Include="ng-logging-application-insights\" />
     <Folder Include="ng-logging" />
     <Folder Include="ng-logging-application-insights\src\" />
     <Folder Include="ng-logging\src" />
+    <Folder Include="ngrx-store-logger\src\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <!--Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them.-->

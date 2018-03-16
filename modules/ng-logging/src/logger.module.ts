@@ -22,6 +22,12 @@ export function loggerConfigFactory(config: LoggerFilterOptions | LoggerConfig |
  */
 @NgModule()
 export class LoggerModule {
+    constructor(@Optional() @SkipSelf() parentModule: LoggerModule) {
+        if (parentModule) {
+            throw new Error('LoggerModule has already been loaded, import in root module only.');
+        }
+    }
+
     static forRoot(config: LoggerFilterOptions | LoggerConfig | null = null):
         ModuleWithProviders {
         return {
@@ -43,11 +49,5 @@ export class LoggerModule {
                 }
             ]
         };
-    }
-
-    constructor(@Optional() @SkipSelf() parentModule: LoggerModule) {
-        if (parentModule) {
-            throw new Error('LoggerModule already loaded, import in root module only.');
-        }
     }
 }

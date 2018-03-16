@@ -15,7 +15,6 @@ export class ConsoleLogger implements Logger {
         }
     }
 
-    // tslint:disable-next-line:no-any
     trace(message?: string, ...optionalParams: any[]): void {
         if (!this.isEnabled(LogLevel.Trace)) {
             return;
@@ -25,7 +24,6 @@ export class ConsoleLogger implements Logger {
         console.trace(message, ...optionalParams);
     }
 
-    // tslint:disable-next-line:no-any
     debug(message: string, ...optionalParams: any[]): void {
         if (!this.isEnabled(LogLevel.Debug)) {
             return;
@@ -35,7 +33,6 @@ export class ConsoleLogger implements Logger {
         console.log(message, ...optionalParams);
     }
 
-    // tslint:disable-next-line:no-any
     info(message: string, ...optionalParams: any[]): void {
         if (!this.isEnabled(LogLevel.Info)) {
             return;
@@ -45,7 +42,6 @@ export class ConsoleLogger implements Logger {
         console.info(message, ...optionalParams);
     }
 
-    // tslint:disable-next-line:no-any
     warn(message: string, ...optionalParams: any[]): void {
         if (!this.isEnabled(LogLevel.Warn)) {
             return;
@@ -55,7 +51,6 @@ export class ConsoleLogger implements Logger {
         console.warn(message, ...optionalParams);
     }
 
-    // tslint:disable-next-line:no-any
     error(message: string | Error, ...optionalParams: any[]): void {
         if (!this.isEnabled(LogLevel.Error)) {
             return;

@@ -3,7 +3,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { environment } from './environments/environment';
 
-import { AppModule } from './app/app.browser.module';
+import { AppModule } from './app/app.module';
 
 if (environment.production) {
     enableProdMode();
@@ -12,5 +12,5 @@ if (environment.production) {
 platformBrowserDynamic().bootstrapModule(AppModule)
     .catch(err => {
         // tslint:disable-next-line:no-console
-        console.log(err);
+        console.error(err);
     });

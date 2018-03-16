@@ -1,6 +1,6 @@
 {
   "name": "@bizappframework/ng-logging",
-  "version": "5.0.0-beta.0",
+  "version": "5.0.0-beta.2",
   "description": "Contains logging infrastructure for Angular projects.",
   "author": "BizAppFramework Team",
   "license": "MIT",
@@ -12,22 +12,25 @@
     "build": "ngb build --disable-telemetry --env.prod --env.aot --env.generate"
   },
   "dependencies": {
-    "@angular/common": "^5.2.7",
-    "@angular/compiler": "^5.2.7",
-    "@angular/core": "^5.2.7",
-    "@angular/platform-browser": "^5.2.7",
-    "@angular/platform-browser-dynamic": "^5.2.7",
+    "@angular/common": "^5.2.9",
+    "@angular/compiler": "^5.2.9",
+    "@angular/core": "^5.2.9",
+    "@angular/platform-browser": "^5.2.9",
+    "@angular/platform-browser-dynamic": "^5.2.9",
+    "@ngrx/store": "^5.2.0",
+    "@ngrx/store-devtools": "^5.2.0",
     "applicationinsights-js": "^1.0.15",
     "classlist.js": "^1.1.20150312",
     "core-js": "^2.5.3",
-    "rxjs": "^5.5.6",
+    "rxjs": "^5.5.7",
     "web-animations-js": "^2.3.1",
-    "zone.js": "^0.8.20"
+    "zone.js": "^0.8.20",
+    "ngrx-store-freeze": "^0.2.1"
   },
   "devDependencies": {
     "@types/applicationinsights-js": "^1.0.5",
     "codelyzer": "^4.2.1",
-    "rxjs-tslint-rules": "^3.14.0",
+    "rxjs-tslint-rules": "^3.15.0",
     "tslib": "^1.9.0",
     "tslint": "^5.9.1",
     "tslint-eslint-rules": "^5.1.0",
