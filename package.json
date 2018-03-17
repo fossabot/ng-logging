@@ -11,7 +11,7 @@
     "build:generate": "ngb build --disable-telemetry --filter=generate --env.generate --env.prod",
     "build": "ngb build --disable-telemetry --env.prod --env.aot --env.generate"
   },
-  "dependencies": {
+  "devDependencies": {
     "@angular/common": "^5.2.9",
     "@angular/compiler": "^5.2.9",
     "@angular/core": "^5.2.9",
@@ -25,9 +25,7 @@
     "rxjs": "^5.5.7",
     "web-animations-js": "^2.3.1",
     "zone.js": "^0.8.20",
-    "ngrx-store-freeze": "^0.2.1"
-  },
-  "devDependencies": {
+    "ngrx-store-freeze": "^0.2.1",
     "@types/applicationinsights-js": "^1.0.5",
     "codelyzer": "^4.2.1",
     "rxjs-tslint-rules": "^3.15.0",
