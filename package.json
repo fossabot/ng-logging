@@ -1,6 +1,6 @@
 {
   "name": "@bizappframework/ng-logging",
-  "version": "5.0.0-beta.3",
+  "version": "5.0.0-beta.4",
   "description": "Contains logging infrastructure for Angular projects.",
   "author": "BizAppFramework Team",
   "license": "MIT",
@@ -18,7 +18,7 @@
     "@angular/core": "^5.2.9",
     "@angular/platform-browser": "^5.2.9",
     "@angular/platform-browser-dynamic": "^5.2.9",
-    "@bizappframework/ng-config": "^5.0.0-beta.3",
+    "@bizappframework/ng-config": "^5.0.0-beta.4",
     "@ngrx/store": "^5.2.0",
     "@ngrx/store-devtools": "^5.2.0",
     "@types/applicationinsights-js": "^1.0.5",
