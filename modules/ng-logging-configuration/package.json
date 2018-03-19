@@ -1,0 +1,23 @@
+{
+  "name": "@bizappframework/ng-logging-configuration",
+  "version": "0.0.0",
+  "description": "Contains configuration loader module for @bizappframework/ng-logging.",
+  "author": "",
+  "license": "",
+  "repository": "",
+  "homepage": "",
+  "keywords": [
+    "angular",
+    "logging",
+    "config",
+    "configuration",
+    "aspnet-core-angular-app-logging-config"
+  ],
+  "dependencies": {
+    "tslib": "^1.9.0"
+  },
+  "peerDependencies": {
+    "@angular/core": ">=5.0.0",
+    "@bizappframework/ng-logging": ">=5.0.0-beta.3"
+  }
+}

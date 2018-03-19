@@ -9,6 +9,7 @@
     "types": [],
 
     "paths": {
+      "@bizappframework/ng-application-insights": [ "../../dist/packages/ng-application-insights" ],
       "@bizappframework/ng-logging": [ "../../dist/packages/ng-logging" ]
     }
   },

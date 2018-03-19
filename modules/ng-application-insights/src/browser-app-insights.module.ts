@@ -4,7 +4,14 @@ import { AppInsightsConfig } from './app-insights-config';
 import { AppInsightsService } from './app-insights.service';
 import { BrowserAppInsightsService } from './browser-app-insights.service';
 
-@NgModule()
+@NgModule({
+    providers: [
+        {
+            provide: AppInsightsService,
+            useClass: BrowserAppInsightsService
+        }
+    ]
+})
 export class BrowserAppInsightsModule {
     constructor(
         @Optional() @SkipSelf() parentModule: BrowserAppInsightsModule,
@@ -27,10 +34,6 @@ export class BrowserAppInsightsModule {
                 {
                     provide: AppInsightsConfig,
                     useValue: config
-                },
-                {
-                    provide: AppInsightsService,
-                    useClass: BrowserAppInsightsService
                 }
             ]
         };

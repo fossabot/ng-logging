@@ -22,9 +22,18 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
     <Content Include="banner.txt" />
+    <Content Include="ng-application-insights-configuration\package.json" />
+    <Content Include="ng-application-insights-configuration\README.md" />
+    <Content Include="ng-application-insights-configuration\tsconfig-build.json" />
+    <Content Include="ng-application-insights\package.json" />
+    <Content Include="ng-application-insights\README.md" />
+    <Content Include="ng-application-insights\tsconfig-build.json" />
     <Content Include="ng-logging-application-insights\package.json" />
     <Content Include="ng-logging-application-insights\README.md" />
     <Content Include="ng-logging-application-insights\tsconfig-build.json" />
+    <Content Include="ng-logging-configuration\package.json" />
+    <Content Include="ng-logging-configuration\README.md" />
+    <Content Include="ng-logging-configuration\tsconfig-build.json" />
     <Content Include="ngrx-store-logger\package.json" />
     <Content Include="ngrx-store-logger\README.md" />
     <Content Include="ngrx-store-logger\tsconfig-build.json" />
@@ -32,17 +41,29 @@
     <Content Include="ng-logging\package.json" />
     <Content Include="ng-logging\tsconfig-build.json" />
     <Content Include="ng-logging\README.md" />
+    <TypeScriptCompile Include="ng-application-insights-configuration\index.ts" />
+    <TypeScriptCompile Include="ng-application-insights-configuration\public_api.ts" />
+    <TypeScriptCompile Include="ng-application-insights-configuration\src\index.ts" />
+    <TypeScriptCompile Include="ng-application-insights-configuration\src\app-insights-configuration.module.ts" />
+    <TypeScriptCompile Include="ng-application-insights\index.ts" />
+    <TypeScriptCompile Include="ng-application-insights\public_api.ts" />
+    <TypeScriptCompile Include="ng-application-insights\src\app-insights-config.ts" />
+    <TypeScriptCompile Include="ng-application-insights\src\app-insights.service.ts" />
+    <TypeScriptCompile Include="ng-application-insights\src\browser-app-insights.module.ts" />
+    <TypeScriptCompile Include="ng-application-insights\src\browser-app-insights.service.ts" />
+    <TypeScriptCompile Include="ng-application-insights\src\index.ts" />
+    <TypeScriptCompile Include="ng-application-insights\src\noop-app-insights.module.ts" />
+    <TypeScriptCompile Include="ng-application-insights\src\noop-app-insights.service.ts" />
     <TypeScriptCompile Include="ng-logging-application-insights\index.ts" />
     <TypeScriptCompile Include="ng-logging-application-insights\public_api.ts" />
-    <TypeScriptCompile Include="ng-logging-application-insights\src\app-insights-config.ts" />
     <TypeScriptCompile Include="ng-logging-application-insights\src\app-insights-logger-provider.ts" />
     <TypeScriptCompile Include="ng-logging-application-insights\src\app-insights-logger.module.ts" />
     <TypeScriptCompile Include="ng-logging-application-insights\src\app-insights-logger.ts" />
-    <TypeScriptCompile Include="ng-logging-application-insights\src\app-insights.service.ts" />
-    <TypeScriptCompile Include="ng-logging-application-insights\src\browser-app-insights.module.ts" />
-    <TypeScriptCompile Include="ng-logging-application-insights\src\browser-app-insights.service.ts" />
     <TypeScriptCompile Include="ng-logging-application-insights\src\index.ts" />
-    <TypeScriptCompile Include="ng-logging-application-insights\src\noop-app-insights.service.ts" />
+    <TypeScriptCompile Include="ng-logging-configuration\index.ts" />
+    <TypeScriptCompile Include="ng-logging-configuration\public_api.ts" />
+    <TypeScriptCompile Include="ng-logging-configuration\src\index.ts" />
+    <TypeScriptCompile Include="ng-logging-configuration\src\logging-configuration.module.ts" />
     <TypeScriptCompile Include="ng-logging\index.ts" />
     <TypeScriptCompile Include="ng-logging\public_api.ts" />
     <TypeScriptCompile Include="ng-logging\src\console-logger-provider.ts" />
@@ -66,6 +87,12 @@
     <TypeScriptCompile Include="ngrx-store-logger\src\index.ts" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="ng-application-insights-configuration\" />
+    <Folder Include="ng-application-insights-configuration\src\" />
+    <Folder Include="ng-application-insights\" />
+    <Folder Include="ng-application-insights\src\" />
+    <Folder Include="ng-logging-configuration\" />
+    <Folder Include="ng-logging-configuration\src\" />
     <Folder Include="ngrx-store-logger\" />
     <Folder Include="ng-logging-application-insights\" />
     <Folder Include="ng-logging" />

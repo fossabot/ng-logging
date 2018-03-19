@@ -11,5 +11,5 @@ export interface LoggerInformation {
     category: string;
     providerType: string;
     minLevel: LogLevel | null;
-    filter: FilterFunc | null;
+    filter: Function | null;
 }

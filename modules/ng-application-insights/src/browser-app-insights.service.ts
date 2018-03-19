@@ -12,13 +12,17 @@ export class BrowserAppInsightsService implements IAppInsights, AppInsightsServi
     context: Microsoft.ApplicationInsights.ITelemetryContext;
     queue: (() => void)[];
     private _config: AppInsightsConfig;
+    private _initialized = false;
 
     get config(): AppInsightsConfig {
         return this._config;
     }
     set config(value: AppInsightsConfig) {
-        AppInsights.config = {...AppInsights.config, ...value};
+        AppInsights.config = { ...AppInsights.config, ...value };
         this._config = AppInsights.config;
+        if (!this._initialized && this.config.instrumentationKey) {
+            this.init();
+        }
     }
 
     constructor(@Optional() config: AppInsightsConfig) {
@@ -162,12 +166,10 @@ export class BrowserAppInsightsService implements IAppInsights, AppInsightsServi
     init(): void {
         if (!AppInsights.downloadAndSetup) {
             if (AppInsights.config && AppInsights.config.instrumentationKey) {
-                // tslint:disable-next-line:no-any
                 const startTrackPageUrl = (<any>AppInsights)._startTrackPageUrl;
                 if (typeof startTrackPageUrl === 'string') {
                     try {
                         AppInsights.stopTrackPage(startTrackPageUrl);
-                        // tslint:disable-next-line:no-any
                         delete (<any>AppInsights)._startTrackPageUrl;
                     } catch (err) {
                         console.warn('Angular application insights Error [stopTrackPage]: ', err);
@@ -192,7 +194,9 @@ export class BrowserAppInsightsService implements IAppInsights, AppInsightsServi
 
         try {
             AppInsights.downloadAndSetup(this.config);
+            this._initialized = true;
         } catch (ex) {
+            this._initialized = false;
             console.warn('Angular application insights Error [downloadAndSetup]: ', ex);
         }
     }

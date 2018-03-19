@@ -64,19 +64,14 @@ export class DefaultLoggerFactory implements LoggerFactory {
         return defaultLogger;
     }
 
-    setConfig(config: LoggerFilterOptions | LoggerConfig | null): void {
-        if (config) {
-            this._loggerFilterOptions = parseConfig(config);
-        }
-
-        this._loggerFilterOptions = null;
+    setConfig(config: LoggerFilterOptions | LoggerConfig): void {
+        this._loggerFilterOptions = parseConfig(config);
     }
 
     private getRule(providerName: string, category: string): {
         minLevel: LogLevel | undefined | null;
         filter: FilterFunc | null;
-    } |
-        null {
+    } | null {
         if (!this._loggerFilterOptions) {
             return null;
         }
@@ -89,7 +84,7 @@ export class DefaultLoggerFactory implements LoggerFactory {
 
         if (options.rules) {
             for (const rule of options.rules) {
-                if (this.isBetter(rule, current, providerName, category)) {
+                if (DefaultLoggerFactory.isBetter(rule, current, providerName, category)) {
                     current = rule;
                 }
             }
@@ -125,7 +120,7 @@ export class DefaultLoggerFactory implements LoggerFactory {
         };
     }
 
-    private isBetter(rule: LoggerFilterRule,
+    private static isBetter(rule: LoggerFilterRule,
         current: LoggerFilterRule | null,
         providerName: string | null,
         category: string | null): boolean {

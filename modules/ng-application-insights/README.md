@@ -1,14 +1,14 @@
-# ng-logging-application-insights
+# ng-application-insights
 
-[![npm version](https://badge.fury.io/js/%40bizappframework%2Fng-logging-application-insights.svg)](https://badge.fury.io/js/%40bizappframework%2Fng-logging-application-insights)
+[![npm version](https://badge.fury.io/js/%40bizappframework%2Fng-application-insights.svg)](https://badge.fury.io/js/%40bizappframework%2Fng-application-insights)
 
-Contains Microsoft Azure Application Insights logging target for Angular projects.
+Contains Microsoft Azure Application Insights module for Angular projects.
 
 Installation
 ---------------
 
 ```bash
-npm install @bizappframework/ng-logging-application-insights
+npm install @bizappframework/ng-application-insights
 ```
 
 Setup
@@ -16,16 +16,12 @@ Setup
 
 ```typescript
 import { BrowserAppInsightsModule } from '@bizappframework/ng-application-insights';
-import { LoggerModule } from '@bizappframework/ng-logging';
-import { AppInsightsLoggerModule } from '@bizappframework/ng-logging-application-insights';
 
 @NgModule({    
     imports: [
         // Other module imports
 
-        // Logging
-        LoggerModule.forRoot({ minLevel: 'trace' }),
-        AppInsightsLoggerModule,
+        // Note: Only import in browser module
         BrowserAppInsightsModule.forRoot({
             // instrumentationKey: environment.aiInstrumentationKey,
             verboseLogging: true,
@@ -42,7 +38,7 @@ Usage
 ```typescript
 import { Component, OnInit } from '@angular/core';
 
-import { Logger, LoggerFactory } from '@bizappframework/ng-logging';
+import { AppInsightsService } from '@bizappframework/ng-application-insights';
 
 @Component({
     selector: 'app-root',
@@ -51,12 +47,10 @@ import { Logger, LoggerFactory } from '@bizappframework/ng-logging';
 export class AppComponent implements OnInit {
     private readonly _logger: Logger;
 
-    constructor(loggerFactory: LoggerFactory) {
-        this._logger = loggerFactory.createLogger('app');
-    }
+    constructor(private readonly _appInsightsService: AppInsightsService) { }
 
-    ngOnInit(): void {        
-        this._logger.debug('Testing debug');        
+    ngOnInit(): void {
+        this._appInsightsService.trackEvent('ngOnInit');
     }
 }
 ```

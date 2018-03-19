@@ -1,0 +1,24 @@
+{
+  "name": "@bizappframework/ng-application-insights-configuration",
+  "version": "0.0.0",
+  "description": "Contains configuration loader module for @bizappframework/ng-application-insights.",
+  "author": "",
+  "license": "",
+  "repository": "",
+  "homepage": "",
+  "keywords": [
+    "angular",
+    "logging",
+    "config",
+    "configuration",
+    "application-insights",
+    "aspnet-core-angular-application-insights-config"
+  ],
+  "dependencies": {
+    "tslib": "^1.9.0"
+  },
+  "peerDependencies": {
+    "@angular/core": ">=5.0.0",
+    "@bizappframework/ng-application-insights": ">=5.0.0-beta.3"
+  }
+}

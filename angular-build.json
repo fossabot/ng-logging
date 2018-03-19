@@ -59,6 +59,44 @@
     },
     {
       "extends": "ng-logging",
+      "name": "ng-logging-configuration",
+      "srcDir": "modules/ng-logging-configuration",
+      "outDir": "dist/packages/ng-logging-configuration",
+
+      "libraryName": "baf.ngLoggingConfiguration",
+
+      "externals": {
+        "@bizappframework/ng-logging": "baf.ngLogging",
+        "@bizappframework/ng-config": "baf.ngConfig"
+      }
+    },
+    {
+      "extends": "ng-logging",
+      "name": "ng-application-insights",
+      "srcDir": "modules/ng-application-insights",
+      "outDir": "dist/packages/ng-application-insights",
+
+      "libraryName": "baf.ngApplicationInsights",
+
+      "externals": {
+        "applicationinsights-js": "AppInsights"
+      }
+    },
+    {
+      "extends": "ng-logging",
+      "name": "ng-application-insights-configuration",
+      "srcDir": "modules/ng-application-insights-configuration",
+      "outDir": "dist/packages/ng-application-insights-configuration",
+
+      "libraryName": "baf.ngApplicationInsightsConfiguration",
+
+      "externals": {
+        "@bizappframework/ng-application-insights": "baf.ngApplicationInsights",
+        "@bizappframework/ng-config": "baf.ngConfig"
+      }
+    },
+    {
+      "extends": "ng-logging",
       "name": "ng-logging-application-insights",
       "srcDir": "modules/ng-logging-application-insights",
       "outDir": "dist/packages/ng-logging-application-insights",
@@ -66,8 +104,8 @@
       "libraryName": "baf.ngLoggingAi",
 
       "externals": {
-        "@bizappframework/ng-logging": "baf.ngLogging",
-        "applicationinsights-js": "AppInsights"
+        "@bizappframework/ng-application-insights": "baf.ngApplicationInsights",
+        "@bizappframework/ng-logging": "baf.ngLogging"
       }
     },
     {
@@ -79,7 +117,6 @@
       "libraryName": "baf.ngrxStoreLogger",
 
       "externals": {
-        "@bizappframework/ng-logging": "baf.ngLogging",
         "@ngrx/store": "ngrx.store"
       }
     }
@@ -120,6 +157,7 @@
       "tsconfig": "tsconfig.json",
 
       "copy": [
+        //"appsettings.json",
         "favicon.ico",
         "generated/ie-polyfills.min.js"
       ],

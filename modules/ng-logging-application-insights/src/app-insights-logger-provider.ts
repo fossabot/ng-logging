@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 
+import { AppInsightsService } from '@bizappframework/ng-application-insights';
 import { Logger, LoggerProvider } from '@bizappframework/ng-logging';
 
 import { AppInsightsLogger } from './app-insights-logger';
-import { AppInsightsService } from './app-insights.service';
 
 /**
  * Application Insights logger provider

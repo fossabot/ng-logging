@@ -15,7 +15,8 @@
     "outDir": "../out-tsc",
 
     "paths": {
-      "@bizappframework/ng-logging": [ "./ng-logging" ]
+      "@bizappframework/ng-logging": [ "./ng-logging" ],
+      "@bizappframework/ng-application-insights": [ "./ng-application-insights" ]
     }
   }
 }

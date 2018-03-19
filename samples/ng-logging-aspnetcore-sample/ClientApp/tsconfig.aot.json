@@ -5,7 +5,10 @@
     "rootDir": ".",
 
     "paths": {
+      "@bizappframework/ng-application-insights": [ "../../../dist/packages/ng-application-insights" ],
+      "@bizappframework/ng-application-insights-configuration": [ "../../../dist/packages/ng-application-insights-configuration" ],
       "@bizappframework/ng-logging": [ "../../../dist/packages/ng-logging" ],
+      "@bizappframework/ng-logging-configuration": [ "../../../dist/packages/ng-logging-configuration" ],
       "@bizappframework/ng-logging-application-insights": [ "../../../dist/packages/ng-logging-application-insights" ],
       "@bizappframework/ngrx-store-logger": [ "../../../dist/packages/ngrx-store-logger" ],
 

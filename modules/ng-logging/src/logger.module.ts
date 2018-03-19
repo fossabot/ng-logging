@@ -20,7 +20,14 @@ export function loggerConfigFactory(config: LoggerFilterOptions | LoggerConfig |
 /**
  * Logger module
  */
-@NgModule()
+@NgModule({
+    providers: [
+        {
+            provide: LoggerFactory,
+            useClass: DefaultLoggerFactory
+        }
+    ]
+})
 export class LoggerModule {
     constructor(@Optional() @SkipSelf() parentModule: LoggerModule) {
         if (parentModule) {
@@ -33,7 +40,6 @@ export class LoggerModule {
         return {
             ngModule: LoggerModule,
             providers: [
-                DefaultLoggerFactory,
                 {
                     provide: LOGGER_CONFIG,
                     useValue: config
@@ -42,10 +48,6 @@ export class LoggerModule {
                     provide: LOGGER_FILTER_OPTIONS,
                     useFactory: (loggerConfigFactory),
                     deps: [LOGGER_CONFIG]
-                },
-                {
-                    provide: LoggerFactory,
-                    useClass: DefaultLoggerFactory
                 }
             ]
         };

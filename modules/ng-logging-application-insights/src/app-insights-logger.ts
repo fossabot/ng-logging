@@ -1,6 +1,5 @@
+import { AppInsightsService, SeverityLevel } from '@bizappframework/ng-application-insights';
 import { Logger, LogLevel } from '@bizappframework/ng-logging';
-
-import { AppInsightsService, SeverityLevel } from './app-insights.service';
 
 /**
  * Application Insights logger

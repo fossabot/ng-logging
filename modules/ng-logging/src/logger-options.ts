@@ -4,14 +4,6 @@ import { LogLevel, LogLevelString } from './log-level';
 import { LoggerFilterRule } from './logger-filter-rule';
 
 /**
- * Logger filter options
- */
-export interface LoggerFilterOptions {
-    minLevel?: LogLevel | null;
-    rules: LoggerFilterRule[];
-}
-
-/**
  * Logger config
  */
 export interface LoggerConfig {
@@ -19,5 +11,13 @@ export interface LoggerConfig {
     [key: string]: LogLevel | LogLevelString | object | null | undefined;
 }
 
-export const LOGGER_CONFIG = new InjectionToken<LoggerConfig>('app.logger-config');
-export const LOGGER_FILTER_OPTIONS = new InjectionToken<LoggerFilterOptions>('app.logger-filter-options');
+/**
+ * Logger filter options
+ */
+export interface LoggerFilterOptions {
+    minLevel?: LogLevel | null;
+    rules: LoggerFilterRule[];
+}
+
+export const LOGGER_CONFIG = new InjectionToken<LoggerConfig>('LOGGER_CONFIG');
+export const LOGGER_FILTER_OPTIONS = new InjectionToken<LoggerFilterOptions>('LOGGER_FILTER_OPTIONS');

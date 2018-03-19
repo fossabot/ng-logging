@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { AppInsightsService } from '@bizappframework/ng-application-insights';
 import { Logger, LoggerFactory } from '@bizappframework/ng-logging';
-import { AppInsightsService } from '@bizappframework/ng-logging-application-insights';
 
 @Component({
     selector: 'app-root',
