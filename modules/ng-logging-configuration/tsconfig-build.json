@@ -19,7 +19,6 @@
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
-    "fullTemplateTypeCheck": true,
     "flatModuleOutFile": "index.js",
     "flatModuleId": "@bizappframework/ng-logging-configuration"
   }

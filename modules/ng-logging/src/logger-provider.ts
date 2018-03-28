@@ -10,4 +10,4 @@ export interface LoggerProvider {
     createLogger(category: string): Logger;
 }
 
-export const LOGGER_PROVIDER = new InjectionToken<LoggerProvider>('app.logger-provider');
+export const LOGGER_PROVIDER = new InjectionToken<LoggerProvider>('LOGGER_PROVIDER');
