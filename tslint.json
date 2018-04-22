@@ -1,11 +1,8 @@
 {
   "extends": [
-    // "tslint:recommended",
     "tslint-eslint-rules",
     "vrsource-tslint-rules",
-    "tslint-microsoft-contrib",
-    "rxjs-tslint-rules"
-
+    "tslint-microsoft-contrib"
   ],
   "rulesDirectory": [
     "node_modules/tslint-eslint-rules/dist/rules",
@@ -28,7 +25,6 @@
     },
     "eofline": true,
     "forin": true,
-    "import-blacklist": [ true, "rxjs", "rxjs/Rx" ],
     "import-spacing": true,
     "indent": [
       true,
@@ -70,7 +66,6 @@
         ]
       }
     ],
-    "no-any": false,
     "no-arg": true,
     "no-bitwise": true,
     "no-console": [
@@ -94,6 +89,7 @@
       "ignore-params"
     ],
     "no-misused-new": true,
+    "no-any": false,
     "no-non-null-assertion": true,
     "no-parameter-properties": false,
     "no-shadowed-variable": true,
@@ -172,11 +168,6 @@
     "no-relative-imports": false,
     "export-name": false,
     "function-name": false,
-
-    // rxjs
-    "rxjs-add": { "severity": "error" },
-    "rxjs-no-unused-add": { "severity": "error" },
-    "rxjs-no-wholesale": { "severity": "error" },
 
     // angular
     "directive-selector": [

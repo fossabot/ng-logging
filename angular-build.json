@@ -1,26 +1,23 @@
 {
-  "$schema": "./node_modules/@bizappframework/angular-build/schemas/schema-draft-04.json#",
+  "$schema": "./node_modules/@bizappframework/angular-build/schemas/schema.json#",
   "libs": [
     {
       "name": "ng-logging",
-      "srcDir": "modules/ng-logging",
-      "outDir": "dist/packages/ng-logging",
+      "root": "modules/ng-logging",
+      "outputPath": "dist/packages/ng-logging",
       "libraryName": "baf.ngLogging",
-
       "tsTranspilation": {
-        "tsconfig": "tsconfig-build.json",
+        "tsConfig": "tsconfig-build.json",
         "copyTemplateAndStyleUrls": false,
         "inlineMetaDataResources": false
       },
-
       "packageOptions": {
         "packageJsonFile": "package.json"
       },
-
       "envOverrides": {
         "prod": {
           "clean": {
-            "beforeRun": {
+            "beforeBuild": {
               "cleanOutDir": true
             }
           },
@@ -34,20 +31,19 @@
               "entry": "index.js",
               "entryRoot": "tsOutDir",
               "libraryTarget": "es",
-              "outDir": "bundles"
+              "outputFilePath": "bundles/"
             },
             {
               "entryRoot": "prevBundleOutDir",
               "libraryTarget": "es",
-              "outDir": "bundles",
+              "outputFilePath": "bundles/",
               "transformScriptTargetOnly": true,
               "scriptTarget": "es5"
             },
             {
               "entryRoot": "prevBundleOutDir",
               "libraryTarget": "umd",
-              "outDir": "bundles",
-              "namedExports": true
+              "outputFilePath": "bundles/"
             }
           ],
           "packageOptions": {
@@ -58,64 +54,54 @@
       }
     },
     {
-      "extends": "ng-logging",
+      "extends": "projects:ng-logging",
       "name": "ng-logging-configuration",
-      "srcDir": "modules/ng-logging-configuration",
-      "outDir": "dist/packages/ng-logging-configuration",
-
+      "root": "modules/ng-logging-configuration",
+      "outputPath": "dist/packages/ng-logging-configuration",
       "libraryName": "baf.ngLoggingConfiguration",
-
       "externals": {
         "@bizappframework/ng-logging": "baf.ngLogging",
         "@bizappframework/ng-config": "baf.ngConfig"
       }
     },
     {
-      "extends": "ng-logging",
+      "extends": "projects:ng-logging",
       "name": "ng-application-insights",
-      "srcDir": "modules/ng-application-insights",
-      "outDir": "dist/packages/ng-application-insights",
-
+      "root": "modules/ng-application-insights",
+      "outputPath": "dist/packages/ng-application-insights",
       "libraryName": "baf.ngApplicationInsights",
-
       "externals": {
         "applicationinsights-js": "AppInsights"
       }
     },
     {
-      "extends": "ng-logging",
+      "extends": "projects:ng-logging",
       "name": "ng-application-insights-configuration",
-      "srcDir": "modules/ng-application-insights-configuration",
-      "outDir": "dist/packages/ng-application-insights-configuration",
-
+      "root": "modules/ng-application-insights-configuration",
+      "outputPath": "dist/packages/ng-application-insights-configuration",
       "libraryName": "baf.ngApplicationInsightsConfiguration",
-
       "externals": {
         "@bizappframework/ng-application-insights": "baf.ngApplicationInsights",
         "@bizappframework/ng-config": "baf.ngConfig"
       }
     },
     {
-      "extends": "ng-logging",
+      "extends": "projects:ng-logging",
       "name": "ng-logging-application-insights",
-      "srcDir": "modules/ng-logging-application-insights",
-      "outDir": "dist/packages/ng-logging-application-insights",
-
+      "root": "modules/ng-logging-application-insights",
+      "outputPath": "dist/packages/ng-logging-application-insights",
       "libraryName": "baf.ngLoggingAi",
-
       "externals": {
         "@bizappframework/ng-application-insights": "baf.ngApplicationInsights",
         "@bizappframework/ng-logging": "baf.ngLogging"
       }
     },
     {
-      "extends": "ng-logging",
+      "extends": "projects:ng-logging",
       "name": "ngrx-store-logger",
-      "srcDir": "modules/ngrx-store-logger",
-      "outDir": "dist/packages/ngrx-store-logger",
-
+      "root": "modules/ngrx-store-logger",
+      "outputPath": "dist/packages/ngrx-store-logger",
       "libraryName": "baf.ngrxStoreLogger",
-
       "externals": {
         "@ngrx/store": "ngrx.store"
       }
@@ -125,21 +111,20 @@
     {
       "name": "generate",
       "platformTarget": "web",
-      "srcDir": "samples/ng-logging-aspnetcore-sample/ClientApp",
-      "outDir": "samples/ng-logging-aspnetcore-sample/ClientApp/generated",
-
+      "root": "samples/ng-logging-aspnetcore-sample/ClientApp",
+      "outputPath": "samples/ng-logging-aspnetcore-sample/ClientApp/generated",
       "clean": {
-        "beforeRun": {
+        "beforeBuild": {
           "cleanOutDir": true
         }
       },
-
       "polyfills": [
         "ie-polyfills.ts"
       ],
       "polyfillsChunkName": "ie-polyfills.min",
-
-      "bundlesHash": false,
+      "outputHashing": {
+        "bundles": false
+      },
       "publicPath": "/",
       "skip": true,
       "envOverrides": {
@@ -151,23 +136,20 @@
     {
       "name": "browser-app",
       "platformTarget": "web",
-      "srcDir": "samples/ng-logging-aspnetcore-sample/ClientApp",
-      "outDir": "samples/ng-logging-aspnetcore-sample/wwwroot",
+      "root": "samples/ng-logging-aspnetcore-sample/ClientApp",
+      "outputPath": "samples/ng-logging-aspnetcore-sample/wwwroot",
       "entry": "main.browser.ts",
-      "tsconfig": "tsconfig.json",
-
+      "tsConfig": "tsconfig.json",
       "copy": [
         //"appsettings.json",
         "favicon.ico",
         "generated/ie-polyfills.min.js"
       ],
-
       "polyfills": [
         "core-js/es6/reflect",
         "core-js/es7/reflect",
         "polyfills.ts"
       ],
-
       "publicPath": "/",
       "baseHref": "~/",
       "htmlInject": {
@@ -182,48 +164,39 @@
           "asp-append-version": "true"
         }
       },
-
-      //"vendorChunk": true,
       "environmentVariables": {
         "aiInstrumentationKey": "process.env.NG_LOGGING_DEMO_APP_INSIGHTS_KEY"
       },
-
       "envOverrides": {
         "analyze": {
           "bundleAnalyzer": {
             "openAnalyzer": true
           },
-          // "stats": {
-          //   "modules": true,
-          //   "chunks": true,
-          //   "chunkModules": true,
-          //   "entrypoints": true,
-          //   "excludeModules": "node_modules"
-          // },
           "concatenateModules": false
         },
         "prod": {
           "clean": {
-            "beforeRun": {
+            "beforeBuild": {
               "cleanOutDir": true,
               "paths": [
                 "../ClientApp/.bo-cache/"
               ]
             },
-            "allowOutsideOutputDir": true
+            "allowOutsideOutDir": true
           },
-          "bundlesHash": false,
-          "chunksHash": false,
-          "moduleReplacements": [
+          "outputHashing": {
+            "bundles": false,
+            "chunks": false
+          },
+          "fileReplacements": [
             {
-              "resourcePath": "./environments/environment.ts",
-              "newResourcePath": "./environments/environment.prod.ts"
+              "src": "./environments/environment.ts",
+              "replaceWith": "./environments/environment.prod.ts"
             }
           ]
         },
         "aot": {
-          "tsconfig": "tsconfig.aot.json",
-
+          "tsConfig": "tsconfig.aot.json",
           "polyfills": [
             "polyfills.ts"
           ]
@@ -231,5 +204,4 @@
       }
     }
   ]
-  //"logLevel": "debug"
 }
