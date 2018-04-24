@@ -190,8 +190,8 @@
           },
           "fileReplacements": [
             {
-              "src": "./environments/environment.ts",
-              "replaceWith": "./environments/environment.prod.ts"
+              "replace": "./environments/environment.ts",
+              "with": "./environments/environment.prod.ts"
             }
           ]
         },
