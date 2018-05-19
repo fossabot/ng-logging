@@ -4,6 +4,7 @@ ng-logging
 <!-- Badges section here. -->
 [![Build status](https://img.shields.io/appveyor/ci/mmzliveid/ng-logging.svg?label=appveyor)](https://ci.appveyor.com/project/mmzliveid/ng-logging)
 [![Build Status](https://img.shields.io/travis/BizAppFramework/ng-logging/master.svg?label=travis)](https://travis-ci.org/BizAppFramework/ng-logging)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmmzliveid%2Fng-logging.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmmzliveid%2Fng-logging?ref=badge_shield)
 
 Contains logging modules for Angular app.
 
@@ -43,3 +44,6 @@ License
 ---------------
 
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](/LICENSE)
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmmzliveid%2Fng-logging.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmmzliveid%2Fng-logging?ref=badge_large)
